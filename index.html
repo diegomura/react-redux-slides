@@ -27,10 +27,10 @@
       <section>
         <h2 class="emphasis">Some Benchmarks</h2>
       </section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="/images/layout.svg" style="height: 130%; z-index: 1; border: 0"></section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="/images/paint.svg" style="height: 130%; z-index: 1; border: 0"></section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="/images/javascript.svg" style="height: 130%; z-index: 1; border: 0"></section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="/images/totalheap.svg"><img src="/images/usedheap.svg"></section>
+      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/layout.svg" style="height: 130%; z-index: 1; border: 0"></section>
+      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/paint.svg" style="height: 130%; z-index: 1; border: 0"></section>
+      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/javascript.svg" style="height: 130%; z-index: 1; border: 0"></section>
+      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/totalheap.svg"><img src="./images/usedheap.svg"></section>
       <section>
         <h2 class="emphasis">Why is React so compelling?</h2>
       </section>
@@ -59,14 +59,14 @@
         <h2 class="emphasis">Virtual DOM</h2>
       </section>
       <section class="virtual-dom">
-        <h2 class="virtual-dom-steps"></h2><img src="/images/dom1.png" class="dom-1"><img src="/images/dom.png" class="substep dom-2"><img src="/images/dom3.png" class="substep dom-3">
+        <h2 class="virtual-dom-steps"></h2><img src="./images/dom1.png" class="dom-1"><img src="./images/dom.png" class="substep dom-2"><img src="./images/dom3.png" class="substep dom-3">
         <div class="substep dom-4">
           <div class="dom-operation"><span style="-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;" class="dom-operation__body"></span></div>
           <div style="top: 50px" class="dom-operation"><span style="-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;" class="dom-operation__body"></span></div>
           <div style="top: 100px" class="dom-operation"><span style="-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;" class="dom-operation__body"></span></div>
           <div style="top: 150px" class="dom-operation"><span style="-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;" class="dom-operation__body"></span></div>
         </div>
-        <div class="substep dom-5"><img src="/images/osx-browser.png" class="osx-browser"><img src="/images/dom.png" class="dom-tree"></div>
+        <div class="substep dom-5"><img src="./images/osx-browser.png" class="osx-browser"><img src="./images/dom.png" class="dom-tree"></div>
       </section>
       <section data-bespoke-backdrop="code-matrix">
         <h2 class="emphasis">What about the code?</h2>
@@ -237,9 +237,9 @@ npm run eject
         <pre><code class="language-javascript">//...
 render: function() {
   return(
-    &#60;div&#62;
+    &#60;div&#60;
       {this.props.children}
-    &#60;/div&#62;
+    &#60;/div&#60;
   );
 }
 //...
@@ -519,36 +519,36 @@ Serie.defaultProps = {
         <h3>Flux is more of a pattern than a framework</h3>
       </section>
       <section data-bespoke-backdrop="light">
-        <h2 class="light">Data flow</h2><br><img src="/images/flux.png">
+        <h2 class="light">Data flow</h2><br><img src="./images/flux.png">
       </section>
       <section data-bespoke-backdrop="light" class="flux">
         <div class="bullet">
-          <h2 class="light">Flux cartoon guide by @linclark</h2><br><img src="/images/flux0.png">
+          <h2 class="light">Flux cartoon guide by @linclark</h2><br><img src="./images/flux0.png">
         </div>
         <div class="bullet">
-          <h2 class="light">User triggers an action</h2><br><img src="/images/flux1.png">
+          <h2 class="light">User triggers an action</h2><br><img src="./images/flux1.png">
         </div>
         <div class="bullet">
-          <h2 class="light">View tells the Action Creator to prepare the action</h2><br><img src="/images/flux2.png">
+          <h2 class="light">View tells the Action Creator to prepare the action</h2><br><img src="./images/flux2.png">
         </div>
         <div class="bullet">
-          <h2 class="light">Action Creator formats the action and dispatch it</h2><br><img src="/images/flux3.png">
+          <h2 class="light">Action Creator formats the action and dispatch it</h2><br><img src="./images/flux3.png">
         </div>
         <div class="bullet">
-          <h2 class="light">Dispatcher sends the action to the stores</h2><br><img src="/images/flux4.png">
+          <h2 class="light">Dispatcher sends the action to the stores</h2><br><img src="./images/flux4.png">
         </div>
         <div class="bullet">
-          <h2 class="light">Stores change the state and notifiy subscribed views controllers</h2><br><img src="/images/flux5.png">
+          <h2 class="light">Stores change the state and notifiy subscribed views controllers</h2><br><img src="./images/flux5.png">
         </div>
         <div class="bullet">
-          <h2 class="light">View Controller ask for new state and updates the view</h2><br><img src="/images/flux6.png">
+          <h2 class="light">View Controller ask for new state and updates the view</h2><br><img src="./images/flux6.png">
         </div>
       </section>
       <section data-bespoke-backdrop="redux">
         <h1>Meet<b>Redux</b></h1><br>
         <h3>Predictable state container for JavaScript apps</h3>
       </section>
-      <section data-bespoke-backdrop="dan"><img style="height: 130%; z-index: 1; border: 0" src="/images/dan.jpg"></section>
+      <section data-bespoke-backdrop="dan"><img style="height: 130%; z-index: 1; border: 0" src="./images/dan.jpg"></section>
     </article>
     <script src="build/build.js"></script>
   </body>
