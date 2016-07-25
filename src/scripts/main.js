@@ -32,7 +32,6 @@ deck.on('activate', function(event) {
     parent.removeClass('confidence');
     parent.removeClass('reliability');
 
-
     switch (parent.find('.active').length) {
       case 0:
         parent.addClass('declarative');
