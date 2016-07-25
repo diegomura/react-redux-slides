@@ -1,0 +1,223 @@
+@import 'prism/themes/prism-okaidia.css'
+@import './react_compelling.styl'
+@import './virtual_dom.styl'
+@import './backgrounds.styl'
+@import './keyframes.styl'
+@import './flux.styl'
+
+h2.emphasis
+  font-size: 1.7em
+
+  &:after
+    content: ""
+    position: absolute
+    width: calc(100% + 100px)
+    height: 2px
+    background: rgba(255,255,255,0.2)
+    bottom: -40px
+    left: -50px
+
+h2.light
+  color: black
+  opacity: 0.5
+
+pre
+  background: rgba(255,255,255,0.2) !important;
+
+li
+  font-family: didot, times new roman, serif
+  font-style: italic
+  font-size: 1.2em
+  line-height: 1.6em
+  margin: .5em 0
+
+.bespoke-progress-bar
+  opacity: 0.5
+
+.codepen
+  width: 100%
+  height: 100%
+  top: 0px
+  left: 0px
+  margin: 0px
+
+  h2
+    margin-bottom: 40px
+
+  div
+    width: 85%
+    height: 80%
+
+    iframe
+      width: 100%
+      height: 100%
+
+.code
+  width: 100%
+  height: 100%
+  top: 0px
+  left: 0px
+  margin: 0px
+  display: flex
+  flex-direction: row
+  justify-content: center
+
+.code-with-title
+  width: 100%
+  height: 100%
+  top: 0px
+  left: 0px
+  margin: 0px
+  display: flex
+  justify-content: center
+
+  h2
+    margin-bottom: 50px
+
+  h4
+    opacity: 0.5
+
+  .code-container
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+
+  .code-container--centered {
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+  }
+
+  .side-note
+    font-size: 18px
+    font-style: italic
+    opacity: 0.3
+
+.light
+  background: white
+
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.set-state
+  justify-content: center !important
+
+  .set-state-column
+    width: 700px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    ul
+      padding-left: 80px
+
+.gotcha-icons
+  font-size: 2.3em
+  width: 100%
+  display: flex
+  justify-content: space-around
+  margin-bottom: 20px
+  border-bottom: 2px solid rgba(255,255,255,0.15)
+  opacity: 0.7
+
+.gotcha
+  .arrow
+    margin: 0px 40px
+
+  .bad, .good
+    position: relative
+
+    &:after
+      content: ""
+      pointer-events: none
+      position: absolute
+      width: 250px
+      height: 100%
+      top: 0
+      right: 0
+      background-image: -webkit-linear-gradient(right, #111, rgba(0, 0, 0, 0))
+      background-image: -moz-linear-gradient(right, #111, rgba(0, 0, 0, 0))
+
+  .bad
+    .gotcha-highlight
+      color: red
+
+  .good
+    .gotcha-highlight
+      color: green
+
+.events
+  width: 100%
+  height: 90%
+  top: 5%
+  left: 0
+  margin: 0
+
+  .events-lists
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    width: 80%
+
+    div
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      width: 33%
+
+      h4
+        text-align: left
+        font: 70%
+        opacity: 0.4
+
+      ul
+        font-size: 65%
+        opacity: 0.7
+
+        .bespoke-bullet-inactive
+          opacity: 1
+
+.create-react-app
+  height: 700px
+  margin-top: -350px;
+
+  pre
+    line-height: 0.9
+    font-size: 20px
+    width: 650px
+
+    code
+      line-height: 0.9
+      font-size: 20px
+      opacity: 0.9
+
+      span
+        font-size: 20px
+
+        &.comment
+          color: black
+          opacity: 0.4
+
+.lifecycle
+  pre
+    font-size: 80%
+
+.lifecycle-callbacks
+  background: rgba(255,255,255,0.2) !important
+  border-radius: 10px;
+  padding: 1em
+
+  pre
+    background: none !important
+    padding: 0px
+
+  .bespoke-bullet-active
+    opacity: 0.2
+
+  .bespoke-bullet-current
+    opacity: 1

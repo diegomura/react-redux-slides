@@ -1,0 +1,623 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title React+Redux
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+  body
+    article
+      section
+        h1 React+Redux
+      
+      section
+        h2 Agenda
+      
+      section(data-bespoke-backdrop='react')
+        h1
+          | Meet
+          b React
+        br
+        h3 A JavaScript Library for Building User Interfaces
+      
+      section
+        h2.emphasis How does React compare to other frameworks?
+      
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 React is only the view layer
+      
+      section
+        h2.emphasis Some Benchmarks
+      
+      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
+        img(src='/images/layout.svg', style='height: 130%; z-index: 1; border: 0')
+      
+      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
+        img(src='/images/paint.svg', style='height: 130%; z-index: 1; border: 0')
+      
+      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
+        img(src='/images/javascript.svg', style='height: 130%; z-index: 1; border: 0')
+      
+      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
+        img(src='/images/totalheap.svg')
+        img(src='/images/usedheap.svg')
+      
+      section
+        h2.emphasis Why is React so compelling?
+      
+      section
+        h2.compelling
+          span.substep.declarative-substep 1. declarative
+          span.substep.predictable-substep  → predictable
+          span.substep.confidence-substep  → confidence
+          span.reliability-substep  → reliability
+      
+      section
+        h2 2. Composable
+      
+      section
+        h2 3. Virtual DOM
+      
+      section
+        h2 4. One-Way Data Flow
+      
+      section
+        h2 5. Server Rendering
+      
+      section
+        h2 6. Works great with teams
+      
+      section(data-bespoke-backdrop='lsd')
+        h2.bullet
+          | FUN
+          span.bullet ?
+      
+      section
+        h2.emphasis Virtual DOM
+      
+      section.virtual-dom
+        h2.virtual-dom-steps
+        img.dom-1(src='/images/dom1.png')
+        img.substep.dom-2(src='/images/dom.png')
+        img.substep.dom-3(src='/images/dom3.png')
+        .substep.dom-4
+          .dom-operation
+            span.dom-operation__header(style='-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;')
+          .dom-operation(style='top: 50px')
+            span.dom-operation__header(style='-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;')
+          .dom-operation(style='top: 100px')
+            span.dom-operation__header(style='-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;')
+          .dom-operation(style='top: 150px')
+            span.dom-operation__header(style='-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;')
+        .substep.dom-5
+          img.osx-browser(src='/images/osx-browser.png')
+          img.dom-tree(src='/images/dom.png')
+      
+      section(data-bespoke-backdrop='code-matrix')
+        h2.emphasis What about the code?
+        
+      section.create-react-app.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 Create-react-app
+        h3 Create React apps with no build configuration.
+        h4 Release date: <u><b>22/07/2016</b></u>
+        pre
+          code.language-javascript.
+            // Install it globally
+            npm install -g create-react-app
+            
+            // Creates new React app
+            create-react-app my-app
+              
+            cd my-app
+            
+            // Runs app in development mode. 
+            // Server listening on localhost:8080
+            npm start 
+            
+            // Builds the app for production
+            npm run build
+            
+            // Switch to advanced mode
+            npm run eject
+      
+      section
+        h2 Components
+        h3 Fundamental block of UI
+        pre
+          code.language-javascript.
+            React.createClass({
+                render: function() {
+                  return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                }
+            });
+      
+      section
+        h3
+          | - A React Component is a highly cohesive building block for UI, loosely coupled with other components -
+      
+      section
+        h2 Properties
+        ul
+          li Reusable
+          li Composable
+          li Unit testeable
+      
+      section.code-with-title
+        h2 Component definition
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Title = React.createClass({
+                    render: function() {
+                      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                    }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Title extends React.Component {
+                  render() {
+                    return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                  }
+                }
+            span.side-note v.0.13 +
+      
+      section
+        h2 Render method
+        h3 Render a React Element into the DOM
+        pre
+          code.language-javascript.
+            ReactDOM.render(
+              &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
+              document.getElementById('root') // Root node container
+            );
+      
+      section
+        ul
+          li Starting point of any React app
+          li Transforms the Virtual DOM into the real DOM
+      
+      section.code-with-title
+        h2 To sum up
+        .code-container
+          div
+            h4 Create the component
+            pre
+              code.language-javascript.
+                var Title = React.createClass({
+                    render: function() {
+                      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                    }
+                });
+          div
+            h4 And render it into the DOM
+            pre
+              code.language-javascript.
+                ReactDOM.render(
+                  &#60;Title/&#62;,
+                  document.getElementById('root')
+                );
+      
+      section.codepen
+        h2 Voilà, our first component
+        p.codepen(data-height='750', data-theme-id='dark', data-slug-hash='AXyRGw', data-default-tab='js,result', data-user='diegomura', data-embed-version='2')
+          | See the Pen
+          a(href='https://codepen.io/diegomura/pen/AXyRGw/') render method example
+          |  by Diego Muracciole (
+          a(href='http://codepen.io/diegomura') @diegomura
+          | ) on
+          a(href='http://codepen.io') CodePen
+          | .
+        script(async='', src='//assets.codepen.io/assets/embed/ei.js')
+      
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h3(style='opacity: 0.7') That's great, but...
+        h2 Is that HTML inside our JS !?
+      
+      section
+        h2 JSX
+        h3
+          b Optional
+          |  preprocessor to use HTML-like syntax in our code
+      
+      section.code
+        pre
+          code.language-javascript.
+            React.createClass({
+                render: function() {
+                  return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                }
+            });
+        div(style='margin:20px') ⟹
+        pre
+          code.language-javascript.
+            React.createClass({
+                render: function() {
+                  return React.createElement(
+                      'h1', // Element type
+                      null, // Props
+                      "Hello world!" // Children
+                  )
+                }
+            });
+      
+      section
+        h2 JSX Gotchas
+        br
+        .gotcha-icons
+          span 🚫
+          span ✅
+        .gotcha
+          span.bad
+            <span>&#60;h1 <span class="gotcha-highlight">class</span>="foo">Hello, world</span>
+          span.arrow ⟹
+          span.good
+            <span>&#60;h1 <span class="gotcha-highlight">className</span>="foo">Hello, world</span>
+        .gotcha
+          span.bad
+            <span>&#60;label <span class="gotcha-highlight">for</span>="some-input">Inpu</span>
+          span.arrow ⟹
+          span.good
+            <span>&#60;label <span class="gotcha-highlight">htmlFor</span>="some-input">Inpu</span>
+            
+      section
+        h2 Component props
+      
+      section.code-with-title
+        h3 <b>Read-only</b> properties passed to a React Component via its attributes
+        h3 We can access these properties inside the components via the <b>this.props</b> object
+        .code-container--centered
+          pre
+            code.language-javascript.
+              &#60;Title 
+                color="red" 
+                fontSize="2em"
+                hidden={true}
+                /&#62;
+          div(style='margin:20px') ⟹
+          pre
+            code.language-javascript.
+              this.props = {
+                color: 'red',
+                fontSize: '2em',
+                hidden: true,
+                // ...
+              }
+            
+      section.code-with-title
+        h3 The props object also has a <b>children</b> attribute with all the Component children
+        h4 If we want to render these children, we just:
+      
+        pre
+          code.language-javascript.
+            //...
+            render: function() {
+              return(
+                &#60;div&#60;
+                  {this.props.children}
+                &#60;/div&#60;
+              );
+            }
+            //...
+            
+      section.code-with-title
+        h2 PropTypes
+        h3 They define what props your Component needs and what type(s) they should be
+        h3 The <i>isRequired</i> property tells that the property is required for the Component to work
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Serie = React.createClass({
+                  propTypes: {
+                    name: React.PropTypes.string.isRequired,
+                    seasons: React.PropTypes.number
+                  },
+                  
+                  render: function() { /* ... */ }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Serie extends React.Component {
+                  render() { /* ... */ }
+                }
+                
+                Serie.propTypes = {
+                  name: React.PropTypes.string.isRequired,
+                  seasons: React.PropTypes.number
+                }
+            
+      section.code-with-title
+        div.code-container
+          div
+            h4 JS primitive types
+            ul
+              li array
+              li bool
+              li func
+              li number
+              li object
+              li string
+              li symbol
+          div
+            h4 Others
+            ul
+              li node
+              li element
+              li instanceOf()
+              li oneOf([])
+              li oneOfType([])
+              li arrayOf()
+              li objectOf()
+              li shape({})
+              li any
+    
+      section.code-with-title
+        h2 DefaultProps
+        h3 They define props default values in case they are not passed in
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Serie = React.createClass({
+                  defaultProps: {
+                    name: 'Game of Thrones'
+                    seasons: 1
+                  },
+                  
+                  render: function() { /* ... */ }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Serie extends React.Component {
+                  render() { /* ... */ }
+                }
+                
+                Serie.defaultProps = {
+                  name: 'Game of Thrones'
+                  seasons: 1
+                }
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="GqdAPy" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/GqdAPy/">props example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      
+      section
+        h2 Component state
+        
+      section.code-with-title
+        h2 Initial state
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Serie = React.createClass({
+                  getInitialState: function() {
+                    return {
+                      likes: 0,
+                      // ...
+                    }
+                  },
+                  
+                  render: function() { /* ... */ }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Serie extends React.Component {
+                  constructor(props) {
+                    super(props);
+                    
+                    this.state = {
+                      likes: 0,
+                      //...
+                    }
+                  }
+                  
+                  render() { /* ... */ }
+                }
+    
+      section.code-with-title
+        h2 Change component state
+        .code-container.set-state
+          div.set-state-column
+            h4 setState Method
+            pre
+              code.language-javascript.
+                this.setState(nextState);
+            
+            ul
+              li Primary method to trigger UI updates
+              li Will always trigger a re-render unless <b>shouldComponentUpdate()</b> is false
+              li <b>Merge</b> the nextState into current state
+              li setState should <b>never</b> mutate this.state
+          div
+            h4 Example
+            pre
+              code.language-javascript.
+                  var Serie = React.createClass({
+                    getInitialState: function() {
+                      return { likes: 0, /* ... */ }
+                    },
+                    
+                    like: function() {
+                      this.setState({
+                        likes: this.state.likes + 1
+                      })
+                    },
+                    
+                    render: function() { /* ... */ }
+                  });
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="grzmWB" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/grzmWB/">state example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        
+      section.events.bespoke-bullet-off
+        h2 Event system
+        h3 Cross-browser wrapper around the browser's native events
+        div.events-lists
+          div
+            h4 Keyboard events
+            ul.bespoke-bullet-off
+              li onKeyDown
+              li onKeyPress 
+              li onKeyUp
+          div
+            h4 Mouse events
+            ul
+              li onClick
+              li onDoubleClick
+              li onMouseDown 
+              li onMouseEnter
+              li onMouseLeave
+              li onMouseMove 
+              li onMouseOut 
+              li onMouseOver 
+              li onMouseUp
+              li + drag & drop
+          div
+            h4 Touch events
+            ul
+              li onTouchCancel
+              li onTouchEnd
+              li onTouchMove
+              li onTouchStart
+          div
+            h4 Focus events
+            ul
+              li onFocus
+              li onBlur
+          div
+            h4 Clipboard events
+            ul
+              li onCopy 
+              li onCut 
+              li onPaste
+          div
+            h4 Form events
+            ul
+              li onChange
+              li onInput
+              li onSubmit
+          div
+            h4 UI events
+            ul
+              li onScroll
+          div
+            h4 Image events
+            ul
+              li onLoad
+              li onError
+          div
+            h4 And more...
+        
+      section
+        h2 Component lifecycle
+      
+      section.code-with-title.lifecycle
+        .code-container
+          div
+            h4 Lifecycle callbacks
+            div.lifecycle-callbacks
+              pre.bullet
+                code.language-javascript.
+                  React.createClass({  
+              pre.bullet
+                code.language-javascript.
+                    componentWillMount: function() { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentDidMount: function() { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentWillReceiveProps: function(nextProps) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    shouldComponentUpdate: function(nextProps, nextState) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentWillUpdate: function(nextProps, nextState) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentDidUpdate: function(nextProps, nextState) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentWillUnmount: function() { /* ... */ },
+              pre
+                code.language-javascript.
+                      render: function() { /* ... */ }
+                    });
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="kXJLVj" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/kXJLVj/">lifecycle example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        
+    
+        
+      section
+        h2 Flux
+        br
+        h3 Flux is more of a pattern than a framework
+        
+      section(data-bespoke-backdrop='light')
+        h2.light Data flow
+        br
+        img(src="/images/flux.png")
+        
+      section.flux(data-bespoke-backdrop='light')
+        div.bullet
+          h2.light Flux cartoon guide by @linclark
+          br
+          img(src="/images/flux0.png")
+        div.bullet
+          h2.light User triggers an action
+          br
+          img(src="/images/flux1.png")
+        div.bullet
+          h2.light View tells the Action Creator to prepare the action
+          br
+          img(src="/images/flux2.png")
+        div.bullet
+          h2.light Action Creator formats the action and dispatch it
+          br
+          img(src="/images/flux3.png")
+        div.bullet
+          h2.light Dispatcher sends the action to the stores
+          br
+          img(src="/images/flux4.png")
+        div.bullet
+          h2.light Stores change the state and notifiy subscribed views controllers
+          br
+          img(src="/images/flux5.png")
+        div.bullet
+          h2.light View Controller ask for new state and updates the view
+          br
+          img(src="/images/flux6.png")
+      
+      section(data-bespoke-backdrop='redux')
+        h1
+          | Meet
+          b Redux
+        br
+        h3 Predictable state container for JavaScript apps
+      
+      section(data-bespoke-backdrop='dan')
+        img(style='height: 130%; z-index: 1; border: 0', src='/images/dan.jpg')
+        
+    script(src='build/build.js')
