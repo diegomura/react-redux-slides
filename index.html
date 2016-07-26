@@ -11,11 +11,8 @@
       <section>
         <h1>React+Redux</h1>
       </section>
-      <section>
-        <h2>Agenda</h2>
-      </section>
       <section data-bespoke-backdrop="react">
-        <h1>Meet<b>React</b></h1><br>
+        <h1>Meet<b>  React</b></h1><br>
         <h3>A JavaScript Library for Building User Interfaces</h3>
       </section>
       <section>
@@ -24,13 +21,6 @@
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
         <h2>React is only the view layer</h2>
       </section>
-      <section>
-        <h2 class="emphasis">Some Benchmarks</h2>
-      </section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/layout.svg" style="height: 130%; z-index: 1; border: 0"></section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/paint.svg" style="height: 130%; z-index: 1; border: 0"></section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/javascript.svg" style="height: 130%; z-index: 1; border: 0"></section>
-      <section data-bespoke-backdrop="light" bespoke-backdrop-active="false"><img src="./images/totalheap.svg"><img src="./images/usedheap.svg"></section>
       <section>
         <h2 class="emphasis">Why is React so compelling?</h2>
       </section>
@@ -41,19 +31,10 @@
         <h2>2. Composable</h2>
       </section>
       <section>
-        <h2>3. Virtual DOM</h2>
+        <h2>3. Server Rendering</h2>
       </section>
       <section>
-        <h2>4. One-Way Data Flow</h2>
-      </section>
-      <section>
-        <h2>5. Server Rendering</h2>
-      </section>
-      <section>
-        <h2>6. Works great with teams</h2>
-      </section>
-      <section data-bespoke-backdrop="lsd">
-        <h2 class="bullet">FUN<span class="bullet">?</span></h2>
+        <h2>4. Works great with teams</h2>
       </section>
       <section>
         <h2 class="emphasis">Virtual DOM</h2>
@@ -95,6 +76,21 @@ npm run eject
 </code></pre>
       </section>
       <section>
+        <h2>Render method</h2>
+        <h3>Render a React Element into the DOM</h3>
+        <pre><code class="language-javascript">ReactDOM.render(
+  &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
+  document.getElementById('root') // Root node container
+);
+</code></pre>
+      </section>
+      <section>
+        <ul>
+          <li>Starting point of any React app</li>
+          <li>Transforms the Virtual DOM into the real DOM</li>
+        </ul>
+      </section>
+      <section>
         <h2>Components</h2>
         <h3>Fundamental block of UI</h3>
         <pre><code class="language-javascript">React.createClass({
@@ -106,14 +102,6 @@ npm run eject
       </section>
       <section>
         <h3>- A React Component is a highly cohesive building block for UI, loosely coupled with other components -</h3>
-      </section>
-      <section>
-        <h2>Properties</h2>
-        <ul>
-          <li>Reusable</li>
-          <li>Composable</li>
-          <li>Unit testeable</li>
-        </ul>
       </section>
       <section class="code-with-title">
         <h2>Component definition</h2>
@@ -135,21 +123,6 @@ npm run eject
 }</code></pre><span class="side-note">v.0.13 +</span>
           </div>
         </div>
-      </section>
-      <section>
-        <h2>Render method</h2>
-        <h3>Render a React Element into the DOM</h3>
-        <pre><code class="language-javascript">ReactDOM.render(
-  &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
-  document.getElementById('root') // Root node container
-);
-</code></pre>
-      </section>
-      <section>
-        <ul>
-          <li>Starting point of any React app</li>
-          <li>Transforms the Virtual DOM into the real DOM</li>
-        </ul>
       </section>
       <section class="code-with-title">
         <h2>To sum up</h2>
@@ -383,8 +356,7 @@ Serie.defaultProps = {
             <pre><code class="language-javascript">this.setState(nextState);
 </code></pre>
             <ul>
-              <li>Primary method to trigger UI updates</li>
-              <li>Will always trigger a re-render unless <b>shouldComponentUpdate()</b> is false</li>
+              <li>Primary method to trigger UI updates unless <b>shouldComponentUpdate()</b> is false</li>
               <li><b>Merge</b> the nextState into current state</li>
               <li>setState should <b>never</b> mutate this.state</li>
             </ul>
@@ -545,10 +517,113 @@ Serie.defaultProps = {
         </div>
       </section>
       <section data-bespoke-backdrop="redux">
-        <h1>Meet<b>Redux</b></h1><br>
+        <h1>Meet<b>  Redux</b></h1><br>
         <h3>Predictable state container for JavaScript apps</h3>
       </section>
       <section data-bespoke-backdrop="dan"><img style="height: 130%; z-index: 1; border: 0" src="./images/dan.jpg"></section>
+      <section>
+        <h2>1st principle of React</h2>
+        <h3>The <b>single</b> immutable state tree</h3>
+      </section>
+      <section style="height: 600px">
+        <h3>State</h3>
+        <pre><code class="language-javascript">{
+  series: [
+    {
+      id: 1,
+      name: 'Game of Thrones',
+      seasons: 6,
+      likes: 0
+    },
+    // ...
+  ]
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>2nd principle of React</h2>
+        <h3>The state is <b>read-only</b>. The only way to change it is by dispatching an action</h3>
+      </section>
+      <section>
+        <h2>Action</h2>
+        <h3>Minimal representation of a state change</h3>
+        <pre><code class="language-javascript">{
+  type: 'LIKE', // Type is mandatory
+  serie_id: 1,
+  // ...
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>Reducer function</h2>
+        <h3><b>Pure</b> function that describes how the state mutates given an action</h3>
+      </section>
+      <section class="code-with-title">
+        <h2>Pure functions</h2>
+        <h3>1- Output depends only on the given arguments</h3>
+        <h3>2- Function don't mutate arguments</h3>
+        <div class="code-container--centered">
+          <div style="position:relative; margin-right:20px">
+            <div style="position: absolute; font-size: 56px; top: -20px; left: -20px;">🚫</div>
+            <pre style="width:450px; height:140px"><code class="language-javascript">function append(array, item) {
+  item = api_call(item);
+  return arra.push(item);
+}</code></pre>
+          </div>
+          <div style="position: relative; margin-left:20px">
+            <div style="position: absolute; font-size: 52px; top: -20px; left: -20px;">✅</div>
+            <pre style="width:450px; height:140px"><code class="language-javascript">function append(array, item) {
+  return array.concat(item);
+}
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="reducer">
+        <div class="bullet">
+          <h3>Array.reduce((accumulator, value) => accumulator)</h3>
+        </div>
+        <div class="bullet">
+          <h3><span class="clear">Array.</span><span>reduce</span><span class="clear">(</span><span>(accumulator, value) => accumulator</span><span class="clear">)</span></h3>
+        </div>
+        <div class="bullet">
+          <h3>reducer(state, action) => state</h3>
+        </div>
+      </section>
+      <section>
+        <pre><code class="language-javascript">const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case 'LIKE':
+      return state + action.increment
+    default:
+      return state;
+  }
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>Store</h2>
+        <h3>Binds Redux principles into one object</h3>
+        <pre><code class="language-javascript">const store = Redux.createStore(reducer)
+</code></pre>
+      </section>
+      <section>
+        <h2>Store main methods</h2>
+        <h3>getState()</h3>
+        <p><b>Returns:</b> current state</p>
+        <h3>dispatch(action)</h3>
+        <p><b>Arguments</b>: action to be dispatched</p>
+        <p><b>Returns:</b> dispatched action</p>
+        <h3>subscribe(callback)</h3>
+        <p><b>Arguments</b>: callback that will be called any time an action is dispatched</p>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="Gqdabo" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/Gqdabo/">redux example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Thanks!</h2>
+      </section>
     </article>
     <script src="build/build.js"></script>
   </body>
