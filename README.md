@@ -1,6 +1,10 @@
 # React+Redux
 > A [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) presentation, built with [generator-bespoke](https://github.com/markdalgleish/generator-bespoke)
 
+## View slides online
+
+[View slides](http://diegomura.github.io/react-redux-slides)
+
 ## View slides locally
 
 First, ensure you have the following installed:
