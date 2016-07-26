@@ -10,9 +10,6 @@ html
       section
         h1 React+Redux
       
-      section
-        h2 Agenda
-      
       section(data-bespoke-backdrop='react')
         h1
           | Meet
@@ -27,22 +24,6 @@ html
         h2 React is only the view layer
       
       section
-        h2.emphasis Some Benchmarks
-      
-      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='./images/layout.svg', style='height: 130%; z-index: 1; border: 0')
-      
-      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='./images/paint.svg', style='height: 130%; z-index: 1; border: 0')
-      
-      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='./images/javascript.svg', style='height: 130%; z-index: 1; border: 0')
-      
-      section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='./images/totalheap.svg')
-        img(src='./images/usedheap.svg')
-      
-      section
         h2.emphasis Why is React so compelling?
       
       section
@@ -54,18 +35,12 @@ html
       
       section
         h2 2. Composable
+        
+      section
+        h2 3. Server Rendering
       
       section
-        h2 3. Virtual DOM
-      
-      section
-        h2 4. One-Way Data Flow
-      
-      section
-        h2 5. Server Rendering
-      
-      section
-        h2 6. Works great with teams
+        h2 4. Works great with teams
             
       section
         h2.emphasis Virtual DOM
@@ -118,7 +93,22 @@ html
             
             // Switch to advanced mode
             npm run eject
+            
+      section
+        h2 Render method
+        h3 Render a React Element into the DOM
+        pre
+          code.language-javascript.
+            ReactDOM.render(
+              &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
+              document.getElementById('root') // Root node container
+            );
       
+      section
+        ul
+          li Starting point of any React app
+          li Transforms the Virtual DOM into the real DOM
+
       section
         h2 Components
         h3 Fundamental block of UI
@@ -133,14 +123,7 @@ html
       section
         h3
           | - A React Component is a highly cohesive building block for UI, loosely coupled with other components -
-      
-      section
-        h2 Properties
-        ul
-          li Reusable
-          li Composable
-          li Unit testeable
-      
+        
       section.code-with-title
         h2 Component definition
         .code-container
@@ -163,21 +146,6 @@ html
                   }
                 }
             span.side-note v.0.13 +
-      
-      section
-        h2 Render method
-        h3 Render a React Element into the DOM
-        pre
-          code.language-javascript.
-            ReactDOM.render(
-              &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
-              document.getElementById('root') // Root node container
-            );
-      
-      section
-        ul
-          li Starting point of any React app
-          li Transforms the Virtual DOM into the real DOM
       
       section.code-with-title
         h2 To sum up
@@ -437,8 +405,7 @@ html
                 this.setState(nextState);
             
             ul
-              li Primary method to trigger UI updates
-              li Will always trigger a re-render unless <b>shouldComponentUpdate()</b> is false
+              li Primary method to trigger UI updates unless <b>shouldComponentUpdate()</b> is false
               li <b>Merge</b> the nextState into current state
               li setState should <b>never</b> mutate this.state
           div
@@ -614,5 +581,114 @@ html
       
       section(data-bespoke-backdrop='dan')
         img(style='height: 130%; z-index: 1; border: 0', src='./images/dan.jpg')
+        
+      section
+        h2 1st principle of React
+        h3 The <b>single</b> immutable state tree
+        
+      section(style="height: 600px")
+        h3 State
+        pre
+          code.language-javascript.
+            {
+              series: [
+                {
+                  id: 1,
+                  name: 'Game of Thrones',
+                  seasons: 6,
+                  likes: 0
+                },
+                // ...
+              ]
+            }
+    
+      section
+        h2 2nd principle of React
+        h3 The state is <b>read-only</b>. The only way to change it is by dispatching an action
+      
+      section
+        h2 Action
+        h3 Minimal representation of a state change
+        pre
+          code.language-javascript.
+            {
+              type: 'LIKE', // Type is mandatory
+              serie_id: 1,
+              // ...
+            }
+            
+      section
+        h2 Reducer function
+        h3 <b>Pure</b> function that describes how the state mutates given an action
+        
+      section.code-with-title
+        h2 Pure functions
+        h3 1- Output depends only on the given arguments
+        h3 2- Function don't mutate arguments
+        .code-container--centered
+          div(style='position:relative; margin-right:20px')
+            div(style="position: absolute; font-size: 56px; top: -20px; left: -20px;") 🚫
+            pre(style='width:450px; height:140px')
+              code.language-javascript.
+                function append(array, item) {
+                  item = api_call(item);
+                  return arra.push(item);
+                }
+          div(style='position: relative; margin-left:20px')
+            div(style="position: absolute; font-size: 52px; top: -20px; left: -20px;") ✅
+            pre(style='width:450px; height:140px')
+              code.language-javascript.
+                function append(array, item) {
+                  return array.concat(item);
+                }
+      
+      section.reducer
+        div.bullet
+          h3 Array.reduce((accumulator, value) => accumulator)
+        div.bullet
+          h3
+            span.clear Array.
+            span reduce
+            span.clear (
+            span (accumulator, value) => accumulator
+            span.clear )
+        div.bullet
+          h3 reducer(state, action) => state
+      
+      section
+        pre
+          code.language-javascript.
+            const reducer = (state = 0, action) => {
+              switch(action.type) {
+                case 'LIKE':
+                  return state + action.increment
+                default:
+                  return state;
+              }
+            }
+    
+      section
+        h2 Store
+        h3 Binds Redux principles into one object
+        pre
+          code.language-javascript.
+            const store = Redux.createStore(reducer)
+    
+      section
+        h2 Store main methods
+        h3 getState()
+        p <b>Returns:</b> current state
+        h3 dispatch(action)
+        p <b>Arguments</b>: action to be dispatched
+        p <b>Returns:</b> dispatched action
+        h3 subscribe(callback)
+        p <b>Arguments</b>: callback that will be called any time an action is dispatched
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="Gqdabo" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/Gqdabo/">redux example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    
+      section
+        h2 Thanks!
         
     script(src='build/build.js')
