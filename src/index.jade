@@ -16,7 +16,7 @@ html
       section(data-bespoke-backdrop='react')
         h1
           | Meet
-          b React
+          b   React
         br
         h3 A JavaScript Library for Building User Interfaces
       
@@ -30,17 +30,17 @@ html
         h2.emphasis Some Benchmarks
       
       section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='/images/layout.svg', style='height: 130%; z-index: 1; border: 0')
+        img(src='./images/layout.svg', style='height: 130%; z-index: 1; border: 0')
       
       section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='/images/paint.svg', style='height: 130%; z-index: 1; border: 0')
+        img(src='./images/paint.svg', style='height: 130%; z-index: 1; border: 0')
       
       section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='/images/javascript.svg', style='height: 130%; z-index: 1; border: 0')
+        img(src='./images/javascript.svg', style='height: 130%; z-index: 1; border: 0')
       
       section(data-bespoke-backdrop='light', bespoke-backdrop-active='false')
-        img(src='/images/totalheap.svg')
-        img(src='/images/usedheap.svg')
+        img(src='./images/totalheap.svg')
+        img(src='./images/usedheap.svg')
       
       section
         h2.emphasis Why is React so compelling?
@@ -66,20 +66,15 @@ html
       
       section
         h2 6. Works great with teams
-      
-      section(data-bespoke-backdrop='lsd')
-        h2.bullet
-          | FUN
-          span.bullet ?
-      
+            
       section
         h2.emphasis Virtual DOM
       
       section.virtual-dom
         h2.virtual-dom-steps
-        img.dom-1(src='/images/dom1.png')
-        img.substep.dom-2(src='/images/dom.png')
-        img.substep.dom-3(src='/images/dom3.png')
+        img.dom-1(src='./images/dom1.png')
+        img.substep.dom-2(src='./images/dom.png')
+        img.substep.dom-3(src='./images/dom3.png')
         .substep.dom-4
           .dom-operation
             span.dom-operation__header(style='-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;')
@@ -94,8 +89,8 @@ html
             span.dom-operation__header(style='-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;')
             span.dom-operation__body(style='-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;')
         .substep.dom-5
-          img.osx-browser(src='/images/osx-browser.png')
-          img.dom-tree(src='/images/dom.png')
+          img.osx-browser(src='./images/osx-browser.png')
+          img.dom-tree(src='./images/dom.png')
       
       section(data-bespoke-backdrop='code-matrix')
         h2.emphasis What about the code?
@@ -300,9 +295,9 @@ html
             //...
             render: function() {
               return(
-                &#60;div&#62;
+                &#60;div&#60;
                   {this.props.children}
-                &#60;/div&#62;
+                &#60;/div&#60;
               );
             }
             //...
@@ -578,46 +573,46 @@ html
       section(data-bespoke-backdrop='light')
         h2.light Data flow
         br
-        img(src="/images/flux.png")
+        img(src="./images/flux.png")
         
       section.flux(data-bespoke-backdrop='light')
         div.bullet
           h2.light Flux cartoon guide by @linclark
           br
-          img(src="/images/flux0.png")
+          img(src="./images/flux0.png")
         div.bullet
           h2.light User triggers an action
           br
-          img(src="/images/flux1.png")
+          img(src="./images/flux1.png")
         div.bullet
           h2.light View tells the Action Creator to prepare the action
           br
-          img(src="/images/flux2.png")
+          img(src="./images/flux2.png")
         div.bullet
           h2.light Action Creator formats the action and dispatch it
           br
-          img(src="/images/flux3.png")
+          img(src="./images/flux3.png")
         div.bullet
           h2.light Dispatcher sends the action to the stores
           br
-          img(src="/images/flux4.png")
+          img(src="./images/flux4.png")
         div.bullet
           h2.light Stores change the state and notifiy subscribed views controllers
           br
-          img(src="/images/flux5.png")
+          img(src="./images/flux5.png")
         div.bullet
           h2.light View Controller ask for new state and updates the view
           br
-          img(src="/images/flux6.png")
+          img(src="./images/flux6.png")
       
       section(data-bespoke-backdrop='redux')
         h1
           | Meet
-          b Redux
+          b   Redux
         br
         h3 Predictable state container for JavaScript apps
       
       section(data-bespoke-backdrop='dan')
-        img(style='height: 130%; z-index: 1; border: 0', src='/images/dan.jpg')
+        img(style='height: 130%; z-index: 1; border: 0', src='./images/dan.jpg')
         
     script(src='build/build.js')
