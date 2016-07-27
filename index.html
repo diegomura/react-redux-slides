@@ -9,7 +9,13 @@
   <body>
     <article>
       <section>
-        <h1>React+Redux</h1>
+        <h1 style="margin-bottom: 50px">React+Redux</h1>
+        <div class="social"><img src="./images/twitter.png">
+          <h4>@diegomura</h4>
+        </div>
+        <div class="social"><img src="./images/github.png">
+          <h4>diegomura</h4>
+        </div><img src="./images/mooveit.png" style="width: 170px; margin-top: 70px">
       </section>
       <section data-bespoke-backdrop="react">
         <h1>Meet<b>  React</b></h1><br>
@@ -205,20 +211,6 @@ npm run eject
         </div>
       </section>
       <section class="code-with-title">
-        <h3>The props object also has a <b>children</b> attribute with all the Component children</h3>
-        <h4>If we want to render these children, we just:</h4>
-        <pre><code class="language-javascript">//...
-render: function() {
-  return(
-    &#60;div&#60;
-      {this.props.children}
-    &#60;/div&#60;
-  );
-}
-//...
-</code></pre>
-      </section>
-      <section class="code-with-title">
         <h2>PropTypes</h2>
         <h3>They define what props your Component needs and what type(s) they should be</h3>
         <h3>The <i>isRequired</i> property tells that the property is required for the Component to work</h3>
@@ -358,7 +350,6 @@ Serie.defaultProps = {
             <ul>
               <li>Primary method to trigger UI updates unless <b>shouldComponentUpdate()</b> is false</li>
               <li><b>Merge</b> the nextState into current state</li>
-              <li>setState should <b>never</b> mutate this.state</li>
             </ul>
           </div>
           <div>
@@ -383,83 +374,6 @@ Serie.defaultProps = {
       <section class="codepen">
         <p data-height="750" data-theme-id="dark" data-slug-hash="grzmWB" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/grzmWB/">state example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-      </section>
-      <section class="events bespoke-bullet-off">
-        <h2>Event system</h2>
-        <h3>Cross-browser wrapper around the browser's native events</h3>
-        <div class="events-lists">
-          <div>
-            <h4>Keyboard events</h4>
-            <ul class="bespoke-bullet-off">
-              <li>onKeyDown</li>
-              <li>onKeyPress </li>
-              <li>onKeyUp</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Mouse events</h4>
-            <ul>
-              <li>onClick</li>
-              <li>onDoubleClick</li>
-              <li>onMouseDown </li>
-              <li>onMouseEnter</li>
-              <li>onMouseLeave</li>
-              <li>onMouseMove </li>
-              <li>onMouseOut </li>
-              <li>onMouseOver </li>
-              <li>onMouseUp</li>
-              <li>+ drag & drop</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Touch events</h4>
-            <ul>
-              <li>onTouchCancel</li>
-              <li>onTouchEnd</li>
-              <li>onTouchMove</li>
-              <li>onTouchStart</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Focus events</h4>
-            <ul>
-              <li>onFocus</li>
-              <li>onBlur</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Clipboard events</h4>
-            <ul>
-              <li>onCopy </li>
-              <li>onCut </li>
-              <li>onPaste</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Form events</h4>
-            <ul>
-              <li>onChange</li>
-              <li>onInput</li>
-              <li>onSubmit</li>
-            </ul>
-          </div>
-          <div>
-            <h4>UI events</h4>
-            <ul>
-              <li>onScroll</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Image events</h4>
-            <ul>
-              <li>onLoad</li>
-              <li>onError</li>
-            </ul>
-          </div>
-          <div>
-            <h4>And more...</h4>
-          </div>
-        </div>
       </section>
       <section>
         <h2>Component lifecycle</h2>
@@ -520,9 +434,8 @@ Serie.defaultProps = {
         <h1>Meet<b>  Redux</b></h1><br>
         <h3>Predictable state container for JavaScript apps</h3>
       </section>
-      <section data-bespoke-backdrop="dan"><img style="height: 130%; z-index: 1; border: 0" src="./images/dan.jpg"></section>
       <section>
-        <h2>1st principle of React</h2>
+        <h2>1st principle of Redux</h2>
         <h3>The <b>single</b> immutable state tree</h3>
       </section>
       <section style="height: 600px">
@@ -541,7 +454,7 @@ Serie.defaultProps = {
 </code></pre>
       </section>
       <section>
-        <h2>2nd principle of React</h2>
+        <h2>2nd principle of Redux</h2>
         <h3>The state is <b>read-only</b>. The only way to change it is by dispatching an action</h3>
       </section>
       <section>
@@ -561,18 +474,18 @@ Serie.defaultProps = {
       <section class="code-with-title">
         <h2>Pure functions</h2>
         <h3>1- Output depends only on the given arguments</h3>
-        <h3>2- Function don't mutate arguments</h3>
+        <h3>2- Function doesn't mutate arguments</h3>
         <div class="code-container--centered">
           <div style="position:relative; margin-right:20px">
             <div style="position: absolute; font-size: 56px; top: -20px; left: -20px;">🚫</div>
-            <pre style="width:450px; height:140px"><code class="language-javascript">function append(array, item) {
+            <pre style="width:450px; height:172px"><code class="language-javascript">function append(array, item) {
   item = api_call(item);
   return arra.push(item);
 }</code></pre>
           </div>
           <div style="position: relative; margin-left:20px">
             <div style="position: absolute; font-size: 52px; top: -20px; left: -20px;">✅</div>
-            <pre style="width:450px; height:140px"><code class="language-javascript">function append(array, item) {
+            <pre style="width:450px; height:172px"><code class="language-javascript">function append(array, item) {
   return array.concat(item);
 }
 </code></pre>
@@ -610,12 +523,14 @@ Serie.defaultProps = {
       <section>
         <h2>Store main methods</h2>
         <h3>getState()</h3>
-        <p><b>Returns:</b> current state</p>
+        <p class="secondary"><b>Returns:</b> current state</p>
         <h3>dispatch(action)</h3>
-        <p><b>Arguments</b>: action to be dispatched</p>
-        <p><b>Returns:</b> dispatched action</p>
+        <div class="secondary">
+          <p><b>Arguments</b>: action to be dispatched</p>
+          <p><b>Returns:</b> dispatched action</p>
+        </div>
         <h3>subscribe(callback)</h3>
-        <p><b>Arguments</b>: callback that will be called any time an action is dispatched</p>
+        <p class="secondary"><b>Arguments</b>: callback that will be called any time an action is dispatched</p>
       </section>
       <section class="codepen">
         <p data-height="750" data-theme-id="dark" data-slug-hash="Gqdabo" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/Gqdabo/">redux example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
