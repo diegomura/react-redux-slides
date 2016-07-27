@@ -8,7 +8,16 @@ html
   body
     article
       section
-        h1 React+Redux
+        h1(style="margin-bottom: 50px") React+Redux
+        
+        div.social
+          img(src="./images/twitter.png")
+          h4 @diegomura
+        div.social
+          img(src="./images/github.png")
+          h4 diegomura
+
+        img(src="./images/mooveit.png" style="width: 170px; margin-top: 70px")
       
       section(data-bespoke-backdrop='react')
         h1
@@ -255,22 +264,6 @@ html
               }
             
       section.code-with-title
-        h3 The props object also has a <b>children</b> attribute with all the Component children
-        h4 If we want to render these children, we just:
-      
-        pre
-          code.language-javascript.
-            //...
-            render: function() {
-              return(
-                &#60;div&#60;
-                  {this.props.children}
-                &#60;/div&#60;
-              );
-            }
-            //...
-            
-      section.code-with-title
         h2 PropTypes
         h3 They define what props your Component needs and what type(s) they should be
         h3 The <i>isRequired</i> property tells that the property is required for the Component to work
@@ -407,7 +400,6 @@ html
             ul
               li Primary method to trigger UI updates unless <b>shouldComponentUpdate()</b> is false
               li <b>Merge</b> the nextState into current state
-              li setState should <b>never</b> mutate this.state
           div
             h4 Example
             pre
@@ -471,8 +463,6 @@ html
         <p data-height="750" data-theme-id="dark" data-slug-hash="kXJLVj" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/kXJLVj/">lifecycle example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         
-    
-        
       section
         h2 Flux
         br
@@ -519,12 +509,9 @@ html
           b   Redux
         br
         h3 Predictable state container for JavaScript apps
-      
-      section(data-bespoke-backdrop='dan')
-        img(style='height: 130%; z-index: 1; border: 0', src='./images/dan.jpg')
         
       section
-        h2 1st principle of React
+        h2 1st principle of Redux
         h3 The <b>single</b> immutable state tree
         
       section(style="height: 600px")
@@ -544,7 +531,7 @@ html
             }
     
       section
-        h2 2nd principle of React
+        h2 2nd principle of Redux
         h3 The state is <b>read-only</b>. The only way to change it is by dispatching an action
       
       section
@@ -565,11 +552,11 @@ html
       section.code-with-title
         h2 Pure functions
         h3 1- Output depends only on the given arguments
-        h3 2- Function don't mutate arguments
+        h3 2- Function doesn't mutate arguments
         .code-container--centered
           div(style='position:relative; margin-right:20px')
             div(style="position: absolute; font-size: 56px; top: -20px; left: -20px;") 🚫
-            pre(style='width:450px; height:140px')
+            pre(style='width:450px; height:172px')
               code.language-javascript.
                 function append(array, item) {
                   item = api_call(item);
@@ -577,7 +564,7 @@ html
                 }
           div(style='position: relative; margin-left:20px')
             div(style="position: absolute; font-size: 52px; top: -20px; left: -20px;") ✅
-            pre(style='width:450px; height:140px')
+            pre(style='width:450px; height:172px')
               code.language-javascript.
                 function append(array, item) {
                   return array.concat(item);
@@ -618,12 +605,13 @@ html
       section
         h2 Store main methods
         h3 getState()
-        p <b>Returns:</b> current state
+        p.secondary <b>Returns:</b> current state
         h3 dispatch(action)
-        p <b>Arguments</b>: action to be dispatched
-        p <b>Returns:</b> dispatched action
+        div.secondary
+          p <b>Arguments</b>: action to be dispatched
+          p <b>Returns:</b> dispatched action
         h3 subscribe(callback)
-        p <b>Arguments</b>: callback that will be called any time an action is dispatched
+        p.secondary <b>Arguments</b>: callback that will be called any time an action is dispatched
       
       section.codepen
         <p data-height="750" data-theme-id="dark" data-slug-hash="Gqdabo" data-default-tab="js,result" data-user="diegomura" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/diegomura/pen/Gqdabo/">redux example</a> by Diego Muracciole (<a href="http://codepen.io/diegomura">@diegomura</a>) on <a href="http://codepen.io">CodePen</a>.</p>
